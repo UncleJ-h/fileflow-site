@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - FileFlow</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+            line-height: 1.7;
+            color: #1d1d1f;
+            background: #fbfbfd;
+        }
+        main {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .updated {
+            color: #86868b;
+            font-size: 14px;
+            margin-bottom: 48px;
+        }
+        h2 {
+            font-size: 21px;
+            font-weight: 600;
+            margin: 32px 0 16px;
+        }
+        p { margin-bottom: 16px; color: #424245; }
+        ul { margin: 16px 0; padding-left: 24px; color: #424245; }
+        li { margin-bottom: 8px; }
+        .back {
+            display: inline-block;
+            margin-top: 48px;
+            color: #0071e3;
+            text-decoration: none;
+        }
+        .back:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: December 26, 2024</p>
+
+        <h2>Summary</h2>
+        <p><strong>FileFlow does not collect any personal data.</strong> All file operations happen locally on your Mac. We have no servers, no analytics, and no tracking.</p>
+
+        <h2>Data We Don't Collect</h2>
+        <ul>
+            <li>Your files and file contents</li>
+            <li>Your folder structure</li>
+            <li>Usage analytics or telemetry</li>
+            <li>Personal information</li>
+            <li>Device identifiers</li>
+        </ul>
+
+        <h2>Local Storage</h2>
+        <p>FileFlow stores configuration and history data locally in a <code>.fileflow</code> folder within your chosen root directory. This data never leaves your device.</p>
+
+        <h2>API Keys</h2>
+        <p>If you choose to use AI classification, you provide your own API key (BYOK - Bring Your Own Key). Your API key is stored securely in macOS Keychain and is only used to communicate directly with your chosen AI provider (OpenAI, Anthropic, or local Ollama). FileFlow never sees or stores your API communications.</p>
+
+        <h2>Third-Party Services</h2>
+        <p>When using AI classification, your file metadata (filename, extension, size) may be sent to your configured AI provider. File contents are never sent. Please refer to your AI provider's privacy policy for their data handling practices.</p>
+
+        <h2>iCloud</h2>
+        <p>If you store your files in iCloud Drive, Apple's standard iCloud sync applies. FileFlow does not add any additional cloud functionality.</p>
+
+        <h2>Contact</h2>
+        <p>Questions about this policy? Contact us at <a href="mailto:fileflow@unclej.io">fileflow@unclej.io</a></p>
+
+        <a href="index.html" class="back">&larr; Back to FileFlow</a>
+    </main>
+</body>
+</html>
