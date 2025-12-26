@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Philosophy - FileFlow</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+            line-height: 1.7;
+            color: #1d1d1f;
+            background: #fbfbfd;
+        }
+        main {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+        h1 {
+            font-size: 40px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 32px;
+        }
+        .hero-quote {
+            font-size: 28px;
+            font-weight: 500;
+            color: #1d1d1f;
+            margin-bottom: 48px;
+            padding: 32px;
+            background: #f5f5f7;
+            border-radius: 16px;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 48px 0 24px;
+        }
+        p {
+            margin-bottom: 20px;
+            color: #424245;
+            font-size: 17px;
+        }
+        .two-zones {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 32px 0;
+        }
+        @media (max-width: 600px) {
+            .two-zones { grid-template-columns: 1fr; }
+        }
+        .zone {
+            padding: 24px;
+            border-radius: 12px;
+        }
+        .zone.dump {
+            background: #fff3e0;
+        }
+        .zone.archive {
+            background: #e3f2fd;
+        }
+        .zone h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .zone p {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        .zone ul {
+            list-style: none;
+            font-size: 14px;
+            color: #666;
+        }
+        .zone ul li {
+            padding: 4px 0;
+        }
+        .principle {
+            background: #f5f5f7;
+            padding: 24px;
+            border-radius: 12px;
+            margin: 24px 0;
+        }
+        .principle p {
+            font-size: 17px;
+            font-weight: 500;
+            color: #1d1d1f;
+            margin: 0;
+        }
+        .closing {
+            font-size: 21px;
+            font-weight: 500;
+            color: #1d1d1f;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid #e8e8ed;
+        }
+        .back {
+            display: inline-block;
+            margin-top: 48px;
+            color: #0071e3;
+            text-decoration: none;
+        }
+        .back:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Product Philosophy</h1>
+
+        <div class="hero-quote">
+            Not everything should be organized the same way.
+        </div>
+
+        <p>Most file organizers assume one thing: that organizing means breaking everything apart.</p>
+
+        <p>FileFlow doesn't.</p>
+
+        <h2>Two kinds of folders exist</h2>
+
+        <div class="two-zones">
+            <div class="zone dump">
+                <h3>Dump Folders</h3>
+                <p>Downloads. WeChat. Desktop.</p>
+                <ul>
+                    <li>Meant to be cleared</li>
+                    <li>Files processed individually</li>
+                    <li>Temporary by nature</li>
+                </ul>
+            </div>
+            <div class="zone archive">
+                <h3>Archive Folders</h3>
+                <p>Projects. Deliverables. Records.</p>
+                <ul>
+                    <li>Meant to stay intact</li>
+                    <li>Move as a whole</li>
+                    <li>Context matters</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Breaking archives "to organize" often destroys context. FileFlow understands this distinction.</p>
+
+        <h2>Why this matters</h2>
+
+        <p>People avoid organizing files not because it's hard — but because it's risky.</p>
+
+        <p>What if I break something? What if I can't find it later? What if I mess up a project that was working fine?</p>
+
+        <div class="principle">
+            <p>FileFlow removes that risk.</p>
+        </div>
+
+        <p>Every action is previewed. Every move is reversible. Nothing happens silently.</p>
+
+        <h2>The result</h2>
+
+        <p>You stop hesitating. Not because the system is automatic — but because it's safe.</p>
+
+        <p class="closing">FileFlow doesn't force order.<br>It earns your trust to create it.</p>
+
+        <a href="index.html" class="back">&larr; Back to FileFlow</a>
+    </main>
+</body>
+</html>
