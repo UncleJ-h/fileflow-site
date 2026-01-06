@@ -18,28 +18,29 @@
         }
         main {
             flex: 1;
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto;
             padding: 80px 24px 48px;
         }
         h1 {
-            font-size: 56px;
+            font-size: 64px;
             font-weight: 600;
             letter-spacing: -0.03em;
             margin-bottom: 24px;
         }
         .hero-tagline {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 500;
             color: #1d1d1f;
-            margin-bottom: 32px;
-            letter-spacing: -0.01em;
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
         }
         .hero-points {
-            font-size: 21px;
+            font-size: 24px;
             color: #86868b;
             margin-bottom: 48px;
-            line-height: 1.8;
+            line-height: 1.7;
         }
         .cta {
             display: inline-flex;
@@ -47,7 +48,7 @@
             gap: 8px;
             background: #0071e3;
             color: white;
-            padding: 14px 28px;
+            padding: 16px 32px;
             border-radius: 980px;
             text-decoration: none;
             font-size: 17px;
@@ -59,72 +60,101 @@
 
         /* Hero screenshot */
         .hero-screenshot {
-            margin-top: 48px;
+            margin-top: 56px;
             margin-bottom: 0;
         }
         .hero-screenshot img {
             width: 100%;
             border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            box-shadow: 0 24px 80px rgba(0,0,0,0.12);
+        }
+
+        /* Insight callout */
+        .insight {
+            margin-top: 96px;
+            padding: 48px 0;
+            border-top: 1px solid #e8e8ed;
+            border-bottom: 1px solid #e8e8ed;
+        }
+        .insight-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #6e6e73;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+        .insight-text {
+            font-size: 28px;
+            font-weight: 500;
+            color: #1d1d1f;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
         }
 
         /* Sub-hero */
         .sub-hero {
-            margin-top: 80px;
-            padding-top: 48px;
-            border-top: 1px solid #e8e8ed;
+            margin-top: 64px;
         }
         .sub-hero p {
-            font-size: 19px;
+            font-size: 21px;
             color: #424245;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
-        .sub-hero p:first-child {
-            color: #86868b;
+        .sub-hero p.emphasis {
+            color: #1d1d1f;
+            font-weight: 500;
         }
 
         /* How it works */
         .section {
-            margin-top: 64px;
+            margin-top: 80px;
         }
         .section h2 {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 600;
-            margin-bottom: 32px;
-            letter-spacing: -0.01em;
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
         }
         .step {
-            margin-bottom: 40px;
+            margin-bottom: 48px;
         }
         .step h3 {
-            font-size: 19px;
+            font-size: 21px;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
+            color: #1d1d1f;
         }
         .step p {
             font-size: 17px;
             color: #424245;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            line-height: 1.6;
         }
         .step .highlight {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 19px;
             font-weight: 600;
             color: #1d1d1f;
+            letter-spacing: -0.01em;
         }
 
         /* What FileFlow is */
         .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            margin-top: 24px;
+            gap: 40px;
+            margin-top: 32px;
         }
         @media (max-width: 600px) {
-            .two-col { grid-template-columns: 1fr; }
+            .two-col { grid-template-columns: 1fr; gap: 32px; }
         }
         .col h4 {
             font-size: 17px;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
         .col ul {
             list-style: none;
@@ -132,42 +162,77 @@
             color: #424245;
         }
         .col ul li {
-            padding: 6px 0;
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
         }
         .col ul li::before {
-            content: "✓ ";
+            content: "✓";
             color: #34c759;
+            font-weight: 600;
         }
         .col.not ul li::before {
-            content: "✗ ";
+            content: "✗";
             color: #ff3b30;
+        }
+
+        /* Philosophy */
+        .philosophy {
+            background: #f5f5f7;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 64px;
+        }
+        .philosophy h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+        .philosophy-item {
+            margin-bottom: 24px;
+        }
+        .philosophy-item:last-child {
+            margin-bottom: 0;
+        }
+        .philosophy-item h4 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+        }
+        .philosophy-item p {
+            font-size: 15px;
+            color: #6e6e73;
+            line-height: 1.5;
         }
 
         /* Pricing */
         .pricing {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 32px;
-            border-radius: 16px;
-            margin-top: 48px;
+            background: linear-gradient(135deg, #5e5ce6 0%, #bf5af2 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 64px;
             color: white;
         }
         .pricing h3 {
-            font-size: 21px;
+            font-size: 24px;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
         .pricing-options {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
+            gap: 20px;
         }
         @media (max-width: 600px) {
             .pricing-options { grid-template-columns: 1fr; }
         }
         .pricing-option {
             background: rgba(255,255,255,0.15);
-            padding: 20px;
-            border-radius: 12px;
+            padding: 24px;
+            border-radius: 16px;
         }
         .pricing-option h4 {
             font-size: 17px;
@@ -175,40 +240,50 @@
             margin-bottom: 8px;
         }
         .pricing-option .price {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 700;
             margin-bottom: 8px;
         }
         .pricing-option .desc {
             font-size: 14px;
             opacity: 0.9;
+            line-height: 1.5;
         }
 
         /* Trust */
         .trust {
-            background: #f5f5f7;
-            padding: 32px;
-            border-radius: 16px;
-            margin-top: 48px;
+            margin-top: 64px;
         }
         .trust h3 {
-            font-size: 21px;
+            font-size: 24px;
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
         }
         .trust ul {
             list-style: none;
-            font-size: 15px;
+            font-size: 17px;
             color: #424245;
         }
         .trust ul li {
-            padding: 8px 0;
+            padding: 12px 0;
             border-bottom: 1px solid #e8e8ed;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
         .trust ul li:last-child { border-bottom: none; }
-        .trust p {
-            margin-top: 16px;
-            font-size: 15px;
+        .trust ul li::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: #34c759;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .trust .summary {
+            margin-top: 24px;
+            font-size: 19px;
             font-weight: 500;
             color: #1d1d1f;
         }
@@ -216,7 +291,7 @@
         /* Requirements */
         .requirements {
             text-align: center;
-            margin-top: 48px;
+            margin-top: 64px;
             padding: 24px;
             color: #86868b;
             font-size: 14px;
@@ -224,7 +299,7 @@
 
         footer {
             text-align: center;
-            padding: 24px;
+            padding: 32px 24px;
             color: #86868b;
             font-size: 14px;
             border-top: 1px solid #e8e8ed;
@@ -232,7 +307,7 @@
         footer a { color: #0071e3; text-decoration: none; }
         footer a:hover { text-decoration: underline; }
         footer .copyright {
-            margin-top: 12px;
+            margin-top: 16px;
             font-size: 12px;
         }
     </style>
@@ -261,36 +336,62 @@
             <img src="images/hero-screenshot.png" alt="FileFlow - Your files organized with Johnny Decimal">
         </div>
 
+        <!-- Core Insight -->
+        <div class="insight">
+            <p class="insight-label">The insight</p>
+            <p class="insight-text">Your enemy isn't chaos.<br>It's the fear of making things worse.</p>
+        </div>
+
         <!-- Sub-hero -->
         <div class="sub-hero">
-            <p>Most file tools assume one thing: that organizing means breaking files apart.</p>
-            <p>FileFlow doesn't.</p>
-            <p>It understands the difference between a messy inbox and a carefully structured archive — and treats them differently.</p>
+            <p>Most file tools assume organizing means breaking things apart. Splitting folders. Renaming everything. Starting over.</p>
+            <p>That assumption is why you never start.</p>
+            <p class="emphasis">FileFlow is different. It knows the difference between a messy inbox and a carefully structured archive — and treats them accordingly.</p>
         </div>
 
         <!-- How it works -->
         <div class="section">
-            <h2>How FileFlow works</h2>
+            <h2>How it works</h2>
 
             <div class="step">
-                <h3>1. Not everything should be "organized" the same way</h3>
-                <p>Some folders are dumps. Downloads. WeChat. Desktop. They're meant to be cleared.</p>
-                <p>Others are archives. Projects. Deliverables. History. They're meant to stay intact.</p>
-                <p>FileFlow is designed around this distinction.</p>
+                <h3>Not everything should be organized the same way</h3>
+                <p>Some folders are dumps — Downloads, WeChat, Desktop. They're meant to be cleared.</p>
+                <p>Others are archives — projects, deliverables, client work. They're meant to stay intact.</p>
+                <p>FileFlow never confuses the two.</p>
             </div>
 
             <div class="step">
-                <h3>2. AI suggests. You stay in control.</h3>
-                <p>FileFlow uses rules and AI to <em>suggest</em> where files belong. It never acts without your confirmation.</p>
+                <h3>AI advises. You stay in control.</h3>
+                <p>FileFlow uses rules and AI to suggest where files belong. It never acts without your explicit confirmation.</p>
                 <p>Every action follows the same principle:</p>
                 <p class="highlight">Plan → Commit → Undo</p>
-                <p>You can review everything. You can undo anything.</p>
+                <p>You can preview everything. You can reverse anything.</p>
             </div>
 
             <div class="step">
-                <h3>3. Order, maintained — not enforced</h3>
-                <p>You don't "organize everything once".</p>
-                <p>You spend a few minutes each week, reviewing suggestions. FileFlow handles the rest — safely.</p>
+                <h3>Order, maintained — not enforced</h3>
+                <p>FileFlow isn't about cleaning everything once. It's about spending a few calm minutes each week — and knowing you can always find what you need later.</p>
+                <p>Five minutes a week. That's it.</p>
+            </div>
+        </div>
+
+        <!-- Philosophy -->
+        <div class="philosophy">
+            <h3>What makes FileFlow different</h3>
+
+            <div class="philosophy-item">
+                <h4>Confidence over automation</h4>
+                <p>The real value isn't "AI sorts your files." It's that you finally feel safe enough to act.</p>
+            </div>
+
+            <div class="philosophy-item">
+                <h4>Moving is also organizing</h4>
+                <p>Sometimes the best way to organize a project folder is to move it as a whole — not break it apart.</p>
+            </div>
+
+            <div class="philosophy-item">
+                <h4>Your file system, with memory</h4>
+                <p>Every action is logged. Every move is traceable. You'll always know what happened, when, and why.</p>
             </div>
         </div>
 
@@ -301,9 +402,10 @@
                 <div class="col">
                     <h4>FileFlow is:</h4>
                     <ul>
-                        <li>Local-first</li>
-                        <li>Fully undoable</li>
+                        <li>Local-first and private</li>
+                        <li>Fully reversible</li>
                         <li>Designed for long-term retrievability</li>
+                        <li>Compatible with Johnny Decimal or your existing structure</li>
                     </ul>
                 </div>
                 <div class="col not">
@@ -311,7 +413,8 @@
                     <ul>
                         <li>A cloud storage service</li>
                         <li>An auto-executing AI</li>
-                        <li>A system that breaks your existing structure</li>
+                        <li>A tool that breaks your existing structure</li>
+                        <li>Something you need to babysit</li>
                     </ul>
                 </div>
             </div>
@@ -319,17 +422,17 @@
 
         <!-- Pricing -->
         <div class="pricing">
-            <h3>Simple Pricing</h3>
+            <h3>Simple pricing</h3>
             <div class="pricing-options">
                 <div class="pricing-option">
                     <h4>Free</h4>
                     <div class="price">$0</div>
-                    <div class="desc">50 files lifetime<br>All features included</div>
+                    <div class="desc">50 files, lifetime<br>All features included</div>
                 </div>
                 <div class="pricing-option">
                     <h4>Pro</h4>
                     <div class="price">$39.99</div>
-                    <div class="desc">Unlimited files<br>One-time purchase</div>
+                    <div class="desc">Unlimited files<br>One-time purchase, forever</div>
                 </div>
             </div>
         </div>
@@ -343,7 +446,7 @@
                 <li>No tracking. No telemetry. No hidden sync</li>
                 <li>iCloud is treated as a location, not a service</li>
             </ul>
-            <p>Your file system remains yours.</p>
+            <p class="summary">Your file system remains yours.</p>
         </div>
 
         <!-- Requirements -->
