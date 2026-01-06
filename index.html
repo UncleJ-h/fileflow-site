@@ -57,6 +57,17 @@
         .cta:hover { background: #0077ed; }
         .cta svg { width: 20px; height: 20px; }
 
+        /* Hero screenshot */
+        .hero-screenshot {
+            margin-top: 48px;
+            margin-bottom: 0;
+        }
+        .hero-screenshot img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
         /* Sub-hero */
         .sub-hero {
             margin-top: 80px;
@@ -132,6 +143,47 @@
             color: #ff3b30;
         }
 
+        /* Pricing */
+        .pricing {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 32px;
+            border-radius: 16px;
+            margin-top: 48px;
+            color: white;
+        }
+        .pricing h3 {
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .pricing-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        @media (max-width: 600px) {
+            .pricing-options { grid-template-columns: 1fr; }
+        }
+        .pricing-option {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .pricing-option h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .pricing-option .price {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .pricing-option .desc {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
         /* Trust */
         .trust {
             background: #f5f5f7;
@@ -161,6 +213,15 @@
             color: #1d1d1f;
         }
 
+        /* Requirements */
+        .requirements {
+            text-align: center;
+            margin-top: 48px;
+            padding: 24px;
+            color: #86868b;
+            font-size: 14px;
+        }
+
         footer {
             text-align: center;
             padding: 24px;
@@ -170,6 +231,10 @@
         }
         footer a { color: #0071e3; text-decoration: none; }
         footer a:hover { text-decoration: underline; }
+        footer .copyright {
+            margin-top: 12px;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
@@ -183,12 +248,18 @@
             Everything is reversible.
         </p>
 
+        <!-- TODO: Replace id000000000 with real App ID after approval -->
         <a href="https://apps.apple.com/app/fileflow/id000000000" class="cta">
             <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
             </svg>
             Download on the Mac App Store
         </a>
+
+        <!-- Hero Screenshot -->
+        <div class="hero-screenshot">
+            <img src="images/hero-screenshot.png" alt="FileFlow - Your files organized with Johnny Decimal">
+        </div>
 
         <!-- Sub-hero -->
         <div class="sub-hero">
@@ -246,6 +317,23 @@
             </div>
         </div>
 
+        <!-- Pricing -->
+        <div class="pricing">
+            <h3>Simple Pricing</h3>
+            <div class="pricing-options">
+                <div class="pricing-option">
+                    <h4>Free</h4>
+                    <div class="price">$0</div>
+                    <div class="desc">50 files lifetime<br>All features included</div>
+                </div>
+                <div class="pricing-option">
+                    <h4>Pro</h4>
+                    <div class="price">$39.99</div>
+                    <div class="desc">Unlimited files<br>One-time purchase</div>
+                </div>
+            </div>
+        </div>
+
         <!-- Trust -->
         <div class="trust">
             <h3>Trust & Privacy</h3>
@@ -257,10 +345,16 @@
             </ul>
             <p>Your file system remains yours.</p>
         </div>
+
+        <!-- Requirements -->
+        <div class="requirements">
+            Requires macOS 14.0 Sonoma or later
+        </div>
     </main>
 
     <footer>
         <a href="philosophy.html">Philosophy</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
+        <div class="copyright">© 2025 Uncle J. All rights reserved.</div>
     </footer>
 </body>
 </html>
