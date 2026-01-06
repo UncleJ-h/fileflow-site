@@ -4,79 +4,221 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - FileFlow</title>
+    <meta name="description" content="FileFlow privacy policy. Your files stay on your Mac. No tracking, no analytics, no data collection.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
-            line-height: 1.7;
+            line-height: 1.6;
             color: #1d1d1f;
             background: #fbfbfd;
+            min-height: 100vh;
         }
         main {
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 80px 24px;
+            padding: 80px 24px 64px;
         }
-        h1 {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .updated {
-            color: #86868b;
+        .breadcrumb {
             font-size: 14px;
-            margin-bottom: 48px;
+            color: #86868b;
+            margin-bottom: 40px;
         }
-        h2 {
-            font-size: 21px;
-            font-weight: 600;
-            margin: 32px 0 16px;
-        }
-        p { margin-bottom: 16px; color: #424245; }
-        ul { margin: 16px 0; padding-left: 24px; color: #424245; }
-        li { margin-bottom: 8px; }
-        .back {
-            display: inline-block;
-            margin-top: 48px;
+        .breadcrumb a {
             color: #0071e3;
             text-decoration: none;
         }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+        .updated {
+            font-size: 14px;
+            color: #86868b;
+            margin-bottom: 48px;
+        }
+
+        /* Hero statement */
+        .hero-statement {
+            background: linear-gradient(135deg, #34c759 0%, #30d158 100%);
+            padding: 40px;
+            border-radius: 24px;
+            color: white;
+            margin-bottom: 64px;
+        }
+        .hero-statement h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .hero-statement p {
+            font-size: 19px;
+            opacity: 0.95;
+            margin: 0;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 48px;
+        }
+        .section h2 {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+        }
+        .section p {
+            font-size: 17px;
+            color: #424245;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .section ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        .section ul li {
+            font-size: 17px;
+            color: #424245;
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+        }
+        .section ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 18px;
+            width: 8px;
+            height: 8px;
+            background: #34c759;
+            border-radius: 50%;
+        }
+
+        /* Highlight box */
+        .highlight-box {
+            background: #f5f5f7;
+            padding: 24px 28px;
+            border-radius: 16px;
+            margin: 24px 0;
+        }
+        .highlight-box p {
+            font-size: 17px;
+            color: #1d1d1f;
+            margin: 0;
+        }
+        .highlight-box code {
+            background: #e8e8ed;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+            padding: 48px 0;
+            border-top: 1px solid #e8e8ed;
+            margin-top: 48px;
+        }
+        .contact p {
+            font-size: 17px;
+            color: #6e6e73;
+            margin-bottom: 12px;
+        }
+        .contact a {
+            color: #0071e3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact a:hover { text-decoration: underline; }
+
+        /* Back link */
+        .back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 32px;
+            color: #0071e3;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+        }
         .back:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 36px; }
+            .hero-statement { padding: 32px; }
+            .hero-statement h2 { font-size: 24px; }
+        }
     </style>
 </head>
 <body>
     <main>
-        <h1>Privacy Policy</h1>
+        <p class="breadcrumb"><a href="index.html">FileFlow</a> / Privacy</p>
+
+        <h1>Privacy</h1>
         <p class="updated">Last updated: January 5, 2025</p>
 
-        <h2>Summary</h2>
-        <p><strong>FileFlow does not collect any personal data.</strong> All file operations happen locally on your Mac. We have no servers, no analytics, and no tracking.</p>
+        <!-- Hero -->
+        <div class="hero-statement">
+            <h2>Your files never leave your Mac.</h2>
+            <p>No tracking. No analytics. No data collection. That's the entire policy.</p>
+        </div>
 
-        <h2>Data We Don't Collect</h2>
-        <ul>
-            <li>Your files and file contents</li>
-            <li>Your folder structure</li>
-            <li>Usage analytics or telemetry</li>
-            <li>Personal information</li>
-            <li>Device identifiers</li>
-        </ul>
+        <!-- What we don't collect -->
+        <div class="section">
+            <h2>What we don't collect</h2>
+            <p>FileFlow is designed with privacy as a foundation, not an afterthought.</p>
+            <ul>
+                <li>Your files and their contents</li>
+                <li>Your folder structure</li>
+                <li>Usage analytics or telemetry</li>
+                <li>Personal information</li>
+                <li>Device identifiers or fingerprints</li>
+            </ul>
+        </div>
 
-        <h2>Local Storage</h2>
-        <p>FileFlow stores configuration and history data locally in a <code>.fileflow</code> folder within your chosen root directory. This data never leaves your device.</p>
+        <!-- Local storage -->
+        <div class="section">
+            <h2>Local storage</h2>
+            <p>FileFlow stores all configuration and history locally on your Mac.</p>
+            <div class="highlight-box">
+                <p>Everything lives in a <code>.fileflow</code> folder within your chosen root directory. This data never touches our servers — because we don't have any.</p>
+            </div>
+        </div>
 
-        <h2>API Keys</h2>
-        <p>If you choose to use AI classification, you provide your own API key (BYOK - Bring Your Own Key). Your API key is stored securely in macOS Keychain and is only used to communicate directly with your chosen AI provider (OpenAI, Anthropic, or local Ollama). FileFlow never sees or stores your API communications.</p>
+        <!-- AI and API -->
+        <div class="section">
+            <h2>AI classification</h2>
+            <p>AI features are optional and use your own API key (BYOK — Bring Your Own Key).</p>
+            <p>If you enable AI classification, only file metadata is sent to your provider:</p>
+            <ul>
+                <li>Filename and extension</li>
+                <li>File size</li>
+                <li>Your folder structure (for context)</li>
+            </ul>
+            <div class="highlight-box">
+                <p>File contents are never sent. Your API key is stored in macOS Keychain and communicates directly with your chosen provider (OpenAI, Anthropic, or local Ollama).</p>
+            </div>
+        </div>
 
-        <h2>Third-Party Services</h2>
-        <p>When using AI classification, your file metadata (filename, extension, size) may be sent to your configured AI provider. File contents are never sent. Please refer to your AI provider's privacy policy for their data handling practices.</p>
+        <!-- iCloud -->
+        <div class="section">
+            <h2>iCloud</h2>
+            <p>If your files are stored in iCloud Drive, Apple's standard sync applies. FileFlow doesn't add any cloud functionality — it simply works with files wherever they are on your Mac.</p>
+        </div>
 
-        <h2>iCloud</h2>
-        <p>If you store your files in iCloud Drive, Apple's standard iCloud sync applies. FileFlow does not add any additional cloud functionality.</p>
+        <!-- Contact -->
+        <div class="contact">
+            <p>Questions about privacy?</p>
+            <a href="mailto:fileflow@theunlcej.com">fileflow@theunlcej.com</a>
+        </div>
 
-        <h2>Contact</h2>
-        <p>Questions about this policy? Contact us at <a href="mailto:fileflow@theunlcej.com">fileflow@theunlcej.com</a></p>
-
-        <a href="index.html" class="back">&larr; Back to FileFlow</a>
+        <a href="index.html" class="back">← Back to FileFlow</a>
     </main>
 </body>
 </html>

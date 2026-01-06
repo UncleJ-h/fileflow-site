@@ -4,85 +4,232 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - FileFlow</title>
+    <meta name="description" content="FileFlow terms of service. Simple, fair terms for using the app.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
-            line-height: 1.7;
+            line-height: 1.6;
             color: #1d1d1f;
             background: #fbfbfd;
+            min-height: 100vh;
         }
         main {
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 80px 24px;
+            padding: 80px 24px 64px;
         }
-        h1 {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .updated {
-            color: #86868b;
+        .breadcrumb {
             font-size: 14px;
-            margin-bottom: 48px;
+            color: #86868b;
+            margin-bottom: 40px;
         }
-        h2 {
-            font-size: 21px;
-            font-weight: 600;
-            margin: 32px 0 16px;
-        }
-        p { margin-bottom: 16px; color: #424245; }
-        ul { margin: 16px 0; padding-left: 24px; color: #424245; }
-        li { margin-bottom: 8px; }
-        .back {
-            display: inline-block;
-            margin-top: 48px;
+        .breadcrumb a {
             color: #0071e3;
             text-decoration: none;
         }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+        .updated {
+            font-size: 14px;
+            color: #86868b;
+            margin-bottom: 48px;
+        }
+        .lead {
+            font-size: 21px;
+            color: #424245;
+            margin-bottom: 48px;
+            line-height: 1.6;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 48px;
+        }
+        .section h2 {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+        }
+        .section p {
+            font-size: 17px;
+            color: #424245;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .section ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        .section ul li {
+            font-size: 17px;
+            color: #424245;
+            padding: 12px 0;
+            padding-left: 28px;
+            position: relative;
+            border-bottom: 1px solid #e8e8ed;
+        }
+        .section ul li:last-child {
+            border-bottom: none;
+        }
+        .section ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 8px;
+            height: 8px;
+            background: #0071e3;
+            border-radius: 50%;
+        }
+        .section ul li strong {
+            color: #1d1d1f;
+        }
+
+        /* Highlight box */
+        .highlight-box {
+            background: #f5f5f7;
+            padding: 24px 28px;
+            border-radius: 16px;
+            margin: 24px 0;
+        }
+        .highlight-box.safety {
+            background: linear-gradient(135deg, #e3f0ff 0%, #cce0ff 100%);
+        }
+        .highlight-box p {
+            font-size: 17px;
+            color: #1d1d1f;
+            margin: 0;
+        }
+
+        /* Pricing box */
+        .pricing-box {
+            background: linear-gradient(135deg, #5e5ce6 0%, #bf5af2 100%);
+            padding: 32px;
+            border-radius: 20px;
+            color: white;
+            margin: 24px 0;
+        }
+        .pricing-box h3 {
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .pricing-box p {
+            font-size: 17px;
+            opacity: 0.95;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+            padding: 48px 0;
+            border-top: 1px solid #e8e8ed;
+            margin-top: 48px;
+        }
+        .contact p {
+            font-size: 17px;
+            color: #6e6e73;
+            margin-bottom: 12px;
+        }
+        .contact a {
+            color: #0071e3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact a:hover { text-decoration: underline; }
+
+        /* Back link */
+        .back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 32px;
+            color: #0071e3;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+        }
         .back:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 36px; }
+        }
     </style>
 </head>
 <body>
     <main>
-        <h1>Terms of Service</h1>
+        <p class="breadcrumb"><a href="index.html">FileFlow</a> / Terms</p>
+
+        <h1>Terms</h1>
         <p class="updated">Last updated: January 5, 2025</p>
 
-        <h2>Agreement</h2>
-        <p>By using FileFlow, you agree to these terms. If you don't agree, please don't use the app.</p>
+        <p class="lead">By using FileFlow, you agree to these terms. They're designed to be fair and straightforward.</p>
 
-        <h2>What FileFlow Does</h2>
-        <p>FileFlow is a file organization tool that helps you categorize and move files on your Mac. It uses AI to suggest where files should go, but <strong>you always have final control</strong> over any file operations.</p>
+        <!-- What FileFlow does -->
+        <div class="section">
+            <h2>What FileFlow does</h2>
+            <p>FileFlow is a file organization tool for Mac. It helps you categorize files using AI suggestions and manual rules. You always have final control over every file operation.</p>
+            <div class="highlight-box safety">
+                <p>Every action follows the same principle: <strong>Plan → Commit → Undo</strong>. You preview everything. You can reverse anything.</p>
+            </div>
+        </div>
 
-        <h2>Your Responsibilities</h2>
-        <ul>
-            <li><strong>Backups:</strong> You are responsible for maintaining backups of your files. While FileFlow is designed to be safe and reversible, we recommend regular backups.</li>
-            <li><strong>API Keys:</strong> If you use AI features, you are responsible for your API key and any associated costs from your AI provider.</li>
-            <li><strong>File Decisions:</strong> You are responsible for reviewing and approving file operations before committing them.</li>
-        </ul>
+        <!-- Your responsibilities -->
+        <div class="section">
+            <h2>Your responsibilities</h2>
+            <ul>
+                <li><strong>Backups.</strong> You're responsible for maintaining backups of your files. FileFlow is designed to be safe and reversible, but regular backups are always a good idea.</li>
+                <li><strong>API keys.</strong> If you use AI features, you manage your own API key and any costs from your AI provider.</li>
+                <li><strong>Decisions.</strong> You review and approve file operations before committing them. FileFlow suggests — you decide.</li>
+            </ul>
+        </div>
 
-        <h2>BYOK (Bring Your Own Key)</h2>
-        <p>FileFlow uses a BYOK model for AI features. This means:</p>
-        <ul>
-            <li>You provide and pay for your own API key</li>
-            <li>You have a direct relationship with your AI provider</li>
-            <li>FileFlow does not charge for AI usage</li>
-        </ul>
+        <!-- BYOK -->
+        <div class="section">
+            <h2>Bring Your Own Key</h2>
+            <p>FileFlow uses a BYOK model for AI features. This means you provide your own API key, you have a direct relationship with your provider, and FileFlow doesn't charge for AI usage — your provider does.</p>
+            <div class="highlight-box">
+                <p>Supported providers: OpenAI, Anthropic (Claude), and local Ollama. Your key is stored securely in macOS Keychain.</p>
+            </div>
+        </div>
 
-        <h2>Disclaimer</h2>
-        <p>FileFlow is provided "as is" without warranties of any kind. We are not liable for any data loss, though we've designed the app with safety as a priority (Copy → Verify → Discard workflow, full Undo support).</p>
+        <!-- Pricing -->
+        <div class="section">
+            <h2>Pricing</h2>
+            <div class="pricing-box">
+                <h3>Simple, one-time purchase</h3>
+                <p>FileFlow Free includes 50 files, forever. FileFlow Pro ($39.99) unlocks unlimited files with a single purchase — no subscription, no recurring fees. Refunds are handled through Apple according to App Store policies.</p>
+            </div>
+        </div>
 
-        <h2>Pro Purchase</h2>
-        <p>FileFlow Pro is a one-time purchase. Refunds are handled through Apple according to their App Store policies.</p>
+        <!-- Disclaimer -->
+        <div class="section">
+            <h2>Disclaimer</h2>
+            <p>FileFlow is provided "as is" without warranties of any kind. While we've built the app with safety as a priority — Copy → Verify → Discard workflow, full undo support, operation logging — we can't be held liable for data loss.</p>
+        </div>
 
-        <h2>Changes</h2>
-        <p>We may update these terms. Continued use of FileFlow after changes constitutes acceptance of the new terms.</p>
+        <!-- Changes -->
+        <div class="section">
+            <h2>Changes to these terms</h2>
+            <p>We may update these terms occasionally. Continued use of FileFlow after changes means you accept the new terms. We'll always keep this page updated with the latest version.</p>
+        </div>
 
-        <h2>Contact</h2>
-        <p>Questions? Contact us at <a href="mailto:fileflow@theunlcej.com">fileflow@theunlcej.com</a></p>
+        <!-- Contact -->
+        <div class="contact">
+            <p>Questions about these terms?</p>
+            <a href="mailto:fileflow@theunlcej.com">fileflow@theunlcej.com</a>
+        </div>
 
-        <a href="index.html" class="back">&larr; Back to FileFlow</a>
+        <a href="index.html" class="back">← Back to FileFlow</a>
     </main>
 </body>
 </html>

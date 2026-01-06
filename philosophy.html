@@ -3,166 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Philosophy - FileFlow</title>
+    <title>Philosophy - FileFlow</title>
+    <meta name="description" content="The design philosophy behind FileFlow. Why organizing isn't always about breaking things apart.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
-            line-height: 1.7;
+            line-height: 1.6;
             color: #1d1d1f;
             background: #fbfbfd;
+            min-height: 100vh;
         }
         main {
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 80px 24px;
+            padding: 80px 24px 64px;
         }
+        .breadcrumb {
+            font-size: 14px;
+            color: #86868b;
+            margin-bottom: 40px;
+        }
+        .breadcrumb a {
+            color: #0071e3;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
         h1 {
-            font-size: 40px;
+            font-size: 48px;
             font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-bottom: 32px;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
         }
+        .lead {
+            font-size: 24px;
+            color: #6e6e73;
+            margin-bottom: 64px;
+            line-height: 1.5;
+        }
+
+        /* Hero quote */
         .hero-quote {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 500;
             color: #1d1d1f;
-            margin-bottom: 48px;
-            padding: 32px;
-            background: #f5f5f7;
-            border-radius: 16px;
+            line-height: 1.4;
+            letter-spacing: -0.02em;
+            padding: 48px;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+            border-radius: 24px;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 80px;
+        }
+        .section-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #6e6e73;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
         }
         h2 {
-            font-size: 24px;
+            font-size: 32px;
             font-weight: 600;
-            margin: 48px 0 24px;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
         }
         p {
-            margin-bottom: 20px;
+            font-size: 19px;
             color: #424245;
-            font-size: 17px;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
+        p.emphasis {
+            color: #1d1d1f;
+            font-weight: 500;
+        }
+
+        /* Two zones */
         .two-zones {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 24px;
-            margin: 32px 0;
+            margin: 40px 0;
         }
         @media (max-width: 600px) {
             .two-zones { grid-template-columns: 1fr; }
+            h1 { font-size: 36px; }
+            .hero-quote { font-size: 24px; padding: 32px; }
         }
         .zone {
-            padding: 24px;
-            border-radius: 12px;
+            padding: 32px;
+            border-radius: 20px;
         }
         .zone.dump {
-            background: #fff3e0;
+            background: linear-gradient(135deg, #fef3e2 0%, #fde7c7 100%);
         }
         .zone.archive {
-            background: #e3f2fd;
+            background: linear-gradient(135deg, #e3f0ff 0%, #cce0ff 100%);
         }
         .zone h3 {
-            font-size: 17px;
+            font-size: 21px;
             font-weight: 600;
             margin-bottom: 12px;
+            color: #1d1d1f;
         }
-        .zone p {
+        .zone .zone-desc {
             font-size: 15px;
-            margin-bottom: 8px;
+            color: #6e6e73;
+            margin-bottom: 16px;
         }
         .zone ul {
             list-style: none;
-            font-size: 14px;
-            color: #666;
+            font-size: 15px;
+            color: #424245;
         }
         .zone ul li {
-            padding: 4px 0;
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .principle {
+        .zone ul li::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            background: currentColor;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        /* Insight cards */
+        .insights {
+            display: grid;
+            gap: 24px;
+            margin: 40px 0;
+        }
+        .insight-card {
             background: #f5f5f7;
-            padding: 24px;
-            border-radius: 12px;
-            margin: 24px 0;
+            padding: 32px;
+            border-radius: 20px;
         }
-        .principle p {
+        .insight-card h3 {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1d1d1f;
+        }
+        .insight-card p {
             font-size: 17px;
-            font-weight: 500;
-            color: #1d1d1f;
-            margin: 0;
+            margin-bottom: 0;
+            color: #6e6e73;
         }
+
+        /* Closing */
         .closing {
-            font-size: 21px;
+            text-align: center;
+            padding: 64px 0;
+            border-top: 1px solid #e8e8ed;
+            margin-top: 80px;
+        }
+        .closing-text {
+            font-size: 28px;
             font-weight: 500;
             color: #1d1d1f;
-            margin-top: 48px;
-            padding-top: 32px;
-            border-top: 1px solid #e8e8ed;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
         }
+
+        /* Back link */
         .back {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             margin-top: 48px;
             color: #0071e3;
             text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
         }
         .back:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
     <main>
-        <h1>Product Philosophy</h1>
+        <p class="breadcrumb"><a href="index.html">FileFlow</a> / Philosophy</p>
+
+        <h1>Philosophy</h1>
+        <p class="lead">The ideas that shaped FileFlow — and why they matter.</p>
 
         <div class="hero-quote">
-            Not everything should be organized the same way.
+            Not everything should be<br>organized the same way.
         </div>
 
-        <p>Most file organizers assume one thing: that organizing means breaking everything apart.</p>
+        <!-- The Problem -->
+        <div class="section">
+            <p class="section-label">The problem</p>
+            <h2>Why you never start</h2>
+            <p>Most file organizers assume one thing: that organizing means breaking everything apart. Splitting folders. Renaming everything. Starting over.</p>
+            <p>That assumption is why you never start.</p>
+            <p class="emphasis">Your enemy isn't chaos. It's the fear of making things worse.</p>
+        </div>
 
-        <p>FileFlow doesn't.</p>
+        <!-- The Distinction -->
+        <div class="section">
+            <p class="section-label">The distinction</p>
+            <h2>Two kinds of folders exist</h2>
+            <p>Understanding this changes everything.</p>
 
-        <h2>Two kinds of folders exist</h2>
-
-        <div class="two-zones">
-            <div class="zone dump">
-                <h3>Dump Folders</h3>
-                <p>Downloads. WeChat. Desktop.</p>
-                <ul>
-                    <li>Meant to be cleared</li>
-                    <li>Files processed individually</li>
-                    <li>Temporary by nature</li>
-                </ul>
+            <div class="two-zones">
+                <div class="zone dump">
+                    <h3>Dump Folders</h3>
+                    <p class="zone-desc">Downloads. WeChat. Desktop.</p>
+                    <ul>
+                        <li>Temporary by nature</li>
+                        <li>Meant to be cleared</li>
+                        <li>Files processed individually</li>
+                    </ul>
+                </div>
+                <div class="zone archive">
+                    <h3>Archive Folders</h3>
+                    <p class="zone-desc">Projects. Deliverables. Records.</p>
+                    <ul>
+                        <li>Already have internal order</li>
+                        <li>Meant to stay intact</li>
+                        <li>Move as a whole</li>
+                    </ul>
+                </div>
             </div>
-            <div class="zone archive">
-                <h3>Archive Folders</h3>
-                <p>Projects. Deliverables. Records.</p>
-                <ul>
-                    <li>Meant to stay intact</li>
-                    <li>Move as a whole</li>
-                    <li>Context matters</li>
-                </ul>
+
+            <p>Breaking archives "to organize" destroys context. FileFlow knows the difference — and treats them accordingly.</p>
+        </div>
+
+        <!-- The Insights -->
+        <div class="section">
+            <p class="section-label">The insights</p>
+            <h2>What we believe</h2>
+
+            <div class="insights">
+                <div class="insight-card">
+                    <h3>Confidence over automation</h3>
+                    <p>The real value isn't "AI sorts your files." It's that you finally feel safe enough to act. Every action can be previewed. Every move can be reversed.</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3>Moving is also organizing</h3>
+                    <p>Sometimes the best way to organize a project folder is to move it as a whole — not break it apart. Preserving context is a feature, not a limitation.</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3>Order, maintained — not enforced</h3>
+                    <p>FileFlow isn't about cleaning everything once. It's about spending a few calm minutes each week — and knowing you can always find what you need later.</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3>Your file system, with memory</h3>
+                    <p>Every action is logged. Every move is traceable. You'll always know what happened, when, and why. This isn't a feature — it's the foundation.</p>
+                </div>
             </div>
         </div>
 
-        <p>Breaking archives "to organize" often destroys context. FileFlow understands this distinction.</p>
-
-        <h2>Why this matters</h2>
-
-        <p>People avoid organizing files not because it's hard — but because it's risky.</p>
-
-        <p>What if I break something? What if I can't find it later? What if I mess up a project that was working fine?</p>
-
-        <div class="principle">
-            <p>FileFlow removes that risk.</p>
+        <!-- Closing -->
+        <div class="closing">
+            <p class="closing-text">FileFlow doesn't force order.<br>It earns your trust to create it.</p>
         </div>
 
-        <p>Every action is previewed. Every move is reversible. Nothing happens silently.</p>
-
-        <h2>The result</h2>
-
-        <p>You stop hesitating. Not because the system is automatic — but because it's safe.</p>
-
-        <p class="closing">FileFlow doesn't force order.<br>It earns your trust to create it.</p>
-
-        <a href="index.html" class="back">&larr; Back to FileFlow</a>
+        <a href="index.html" class="back">← Back to FileFlow</a>
     </main>
 </body>
 </html>
