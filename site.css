@@ -52,8 +52,12 @@ a, button, summary { touch-action: manipulation; }
 .hero-media .screenshot-link { height: 100%; max-width: 1120px; }
 .hero-media img { width: auto; height: 100%; object-fit: contain; object-position: top; }
 .screenshot-link { display: block; cursor: zoom-in; }
-/* Match the native window corners at the captures' 17:9 aspect ratio. */
-.screenshot-link img, .guide-figure img, .image-dialog img { border-radius: 2.4% / 4.533%; }
+/* Follow the captured macOS continuous corners without adding a second radius. */
+.screenshot-link img, .guide-figure img, .image-dialog img {
+  --window-contour: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2720 1440' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M80 .75H2640C2685 .75 2691 3 2704 16C2717 29 2719.25 35 2719.25 80V1360C2719.25 1405 2717 1411 2704 1424C2691 1437 2685 1439.25 2640 1439.25H80C35 1439.25 29 1437 16 1424C3 1411 .75 1405 .75 1360V80C.75 35 3 29 16 16C29 3 35 .75 80 .75Z'/%3E%3C/svg%3E");
+  -webkit-mask: var(--window-contour) center / 100% 100% no-repeat;
+  mask: var(--window-contour) center / 100% 100% no-repeat;
+}
 .section { padding: 100px 32px; }
 .content-width, .workspace-gallery { width: min(1120px, 100%); margin: auto; }
 .reading-width { width: min(720px, 100%); margin: auto; }
