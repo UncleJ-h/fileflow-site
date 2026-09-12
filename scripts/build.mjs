@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { site, copy } from '../content/site.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const pages = ['index', 'philosophy', 'support', 'privacy', 'terms', 'guide'];
+const pages = ['index', 'philosophy', 'support', 'privacy', 'terms', 'guide', 'johnny-decimal'];
 const esc = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const lines = value => esc(value).replaceAll('\n', ' <br>');
 const href = (locale, page) => `${locale === 'zh' ? 'zh/' : ''}${page}.html`;
@@ -82,7 +82,7 @@ function home(locale) {
       <div class="section-intro"><p class="eyebrow">${c.workflowLabel}</p><h2 id="workflow-title">${c.workflowTitle}</h2><p>${c.workflowIntro}</p></div>
       <div class="workspace-gallery">
         <div class="gallery-tabs" aria-label="${c.nav[0]}">${c.screens.map((s, i) => `<button type="button" id="tab-${s.key}" data-tab="${s.key}"><span class="tab-number">0${i + 1}</span>${s.label}</button>`).join('')}</div>
-        ${c.screens.map(s => `<section class="gallery-panel" id="panel-${s.key}" data-panel="${s.key}"><div class="panel-copy"><h3>${s.title}</h3><p>${s.text}</p></div>${shot(s.file, s.alt)}</section>`).join('')}
+        ${c.screens.map(s => `<section class="gallery-panel" id="panel-${s.key}" data-panel="${s.key}"><div class="panel-copy"><h3>${s.title}</h3><div><p>${s.text}</p>${s.key === 'browse' ? `<a class="text-link method-link" href="johnny-decimal.html">${c.methodLink}<span aria-hidden="true"> →</span></a>` : ''}</div></div>${shot(s.file, s.alt)}</section>`).join('')}
         <p class="caption">${c.screenshotNote}</p>
       </div>
     </section>
@@ -113,14 +113,31 @@ function document(locale, page) {
   return `<article class="document-body reading-width"><header class="document-header"><p class="eyebrow">FILEFLOW</p><h1>${d.title}</h1><p class="document-lead">${d.description}</p>${d.updated ? `<p class="updated">${d.updated}</p>` : ''}</header>
     ${guide ? `<nav class="guide-toc" aria-label="${locale === 'zh' ? '本页目录' : 'On this page'}">${d.sections.map(([title], i) => `<a href="#step-${i + 1}">${title}</a>`).join('')}</nav>` : ''}
     ${page === 'support' ? `<div class="support-guide"><p>${c.guideIntro}</p><a class="text-link" href="guide.html">${c.guideLink}<span aria-hidden="true"> →</span></a></div>` : ''}
-    ${d.sections.map(([title, text], i) => `<section id="step-${i + 1}"><h2>${title}</h2><p>${esc(text).replaceAll(site.email, `<a href="mailto:${site.email}">${site.email}</a>`)}</p>${figure(i)}</section>`).join('')}
+    ${d.sections.map(([title, text], i) => `<section id="step-${i + 1}"><h2>${title}</h2><p>${esc(text).replaceAll(site.email, `<a href="mailto:${site.email}">${site.email}</a>`)}</p>${guide && i === 1 ? `<a class="text-link" href="johnny-decimal.html">${c.methodLink}<span aria-hidden="true"> →</span></a>` : ''}${figure(i)}</section>`).join('')}
+    <a class="text-link" href="index.html">${locale === 'zh' ? '返回 FileFlow' : 'Back to FileFlow'}<span aria-hidden="true"> →</span></a></article>`;
+}
+
+function method(locale) {
+  const c = copy[locale], d = c.docs['johnny-decimal'];
+  const prefix = locale === 'zh' ? '../' : '';
+  const figure = (file, alt, caption) => `<figure class="guide-figure"><a href="${prefix}images/v1.1/${file}" data-zoom aria-label="${c.expand}: ${esc(alt)}"><img src="${prefix}images/v1.1/${file}" width="2720" height="1440" loading="lazy" alt="${esc(alt)}"></a><figcaption>${esc(caption)}</figcaption></figure>`;
+  const extra = [
+    `<figure class="method-example"><figcaption>${esc(d.exampleLabel)}</figcaption><pre><code>${esc(d.example)}</code></pre></figure><dl class="method-key">${d.parts.map(([id, label, text]) => `<div><dt><code>${id}</code> ${esc(label)}</dt><dd>${esc(text)}</dd></div>`).join('')}</dl><p>${esc(d.exampleNote)}</p><a class="text-link" href="https://johnnydecimal.com/documentation/introduction">${esc(d.officialIntro)}<span aria-hidden="true"> ↗</span></a>`,
+    `${figure('03-browse-structure.png', c.screens[1].alt, d.browseCaption)}<p>${esc(d.indexNote)}</p>`,
+    `<ol class="method-steps">${d.steps.map(([title, text]) => `<li><h3>${esc(title)}</h3><p>${esc(text)}</p></li>`).join('')}</ol>${figure('02-plan-commit.png', c.screens[0].alt, d.planCaption)}`,
+    '',
+    `<ul class="method-resources"><li><a href="https://johnnydecimal.com/documentation">${esc(d.resources[0])}</a></li><li><a href="https://johnnydecimal.com/support/about-legal/licence">${esc(d.resources[1])}</a></li></ul><div class="method-actions"><a class="button" href="${site.store}">${c.download}<span aria-hidden="true">↗</span></a><a class="text-link" href="guide.html">${c.guideLink}<span aria-hidden="true"> →</span></a></div>`,
+  ];
+  return `<article class="document-body reading-width method-body"><header class="document-header"><p class="eyebrow">${d.label}</p><h1>${lines(d.heading || d.title)}</h1><p class="document-lead">${d.lead}</p></header>
+    ${d.sections.map(([title, text], i) => `<section id="method-${i + 1}"><h2>${esc(title)}</h2><p>${esc(text)}</p>${extra[i]}</section>`).join('')}
+    <p class="method-attribution">${esc(d.attribution)}</p>
     <a class="text-link" href="index.html">${locale === 'zh' ? '返回 FileFlow' : 'Back to FileFlow'}<span aria-hidden="true"> →</span></a></article>`;
 }
 
 await mkdir(`${root}zh`, { recursive: true });
 for (const locale of Object.keys(copy)) {
   for (const page of pages) {
-    const html = layout(locale, page, page === 'index' ? home(locale) : document(locale, page));
+    const html = layout(locale, page, page === 'index' ? home(locale) : page === 'johnny-decimal' ? method(locale) : document(locale, page));
     await writeFile(`${root}${href(locale, page)}`, html.replace(/[\t ]+$/gm, ''));
   }
 }

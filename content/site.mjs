@@ -1,4 +1,5 @@
 // Shared product facts and bilingual copy. Generated HTML also works without JavaScript.
+import { johnnyDecimal } from './johnny-decimal.mjs';
 export const site = {
   origin: 'https://fileflow.theunclej.com',
   store: 'https://apps.apple.com/app/fileflow-file-organizer/id6756985211?mt=12',
@@ -8,7 +9,8 @@ export const site = {
 export const copy = {
   en: {
     lang: 'en', language: 'English', other: '简体中文', skip: 'Skip to content',
-    nav: ['Workflow', 'Guide', 'Support'], footer: ['Product', 'Principles', 'Support', 'Privacy', 'Terms', 'Guide'],
+    nav: ['Workflow', 'Guide', 'Support'], footer: ['Product', 'Principles', 'Support', 'Privacy', 'Terms', 'Guide', 'Johnny.Decimal'],
+    methodLink: 'Understand Johnny.Decimal',
     guideLink: 'Your first three files', guideIntro: 'A small first step. A workflow you can trust.',
     title: 'FileFlow | A considered way to organize files on Mac',
     description: 'Review files, choose destinations, and preview a plan before organizing. A native Mac workspace with optional AI assistance.',
@@ -51,6 +53,7 @@ export const copy = {
       ['Where can I get help?', 'Visit Support for the manual workflow, connection checks, and recovery guidance. You can also contact fileflow@theunclej.com.'],
     ],
     docs: {
+      'johnny-decimal': johnnyDecimal.en,
       guide: { title: 'Your first three files.', description: 'A small trial. From your first folder to your first plan.', sections: [
         ['1. Make a little room to experiment', 'Create two separate local folders: FileFlow Test Source and FileFlow Test Archive. Neither should be inside the other. Put three disposable, non-sensitive copies in the source folder, such as a TXT, PNG, and PDF. Keep the originals elsewhere. For this first trial, avoid synced cloud folders and external drives.'],
         ['2. Choose your folders', 'During setup, select and authorize the test archive folder. Choose a Johnny.Decimal template, or use an existing structure with a destination subfolder you have created. Add the test source folder. Check the full path before approving initialization: setup may create FileFlow metadata, which is separate from organizing your source files. Skip AI for this first run.'],
@@ -102,7 +105,8 @@ export const copy = {
   },
   zh: {
     lang: 'zh-Hans', language: '简体中文', other: 'English', skip: '跳至正文',
-    nav: ['整理流程', '使用指南', '支持'], footer: ['产品', '产品理念', '支持', '隐私', '条款', '使用指南'],
+    nav: ['整理流程', '使用指南', '支持'], footer: ['产品', '产品理念', '支持', '隐私', '条款', '使用指南', 'Johnny.Decimal'],
+    methodLink: '了解 Johnny.Decimal',
     guideLink: '从三个文件开始', guideIntro: '先试一小步，再放心继续。',
     title: 'FileFlow | Mac 文件整理，先审核再执行',
     description: '先审核文件，选择目标位置，再预览整理计划。原生 Mac 工作区，支持已有目录结构与可选 AI 分类建议。',
@@ -145,6 +149,7 @@ export const copy = {
       ['在哪里寻求帮助？', '支持页提供手动整理流程、连接检查和恢复提示。你也可以发邮件至 fileflow@theunclej.com。'],
     ],
     docs: {
+      'johnny-decimal': johnnyDecimal.zh,
       guide: { title: '从三个文件开始。', description: '做一次小尝试，走完第一次整理。', sections: [
         ['1. 准备一个小实验', '在 Mac 本地创建两个互不包含的目录，例如“FileFlow 试用来源”和“FileFlow 试用归档”。把三份不含隐私的文件副本放入来源目录，例如一份 TXT、一张 PNG 和一份 PDF。原始文件留在别处，不用唯一副本试验。这次先不使用云同步目录或外接磁盘。'],
         ['2. 选择来源与归档位置', '首次设置时，选择并授权试用归档目录。使用 Johnny.Decimal 模板，或沿用已有结构并提前创建一个目标子目录。再添加试用来源文件夹。初始化前核对完整路径：设置可能创建 FileFlow 管理数据，这与整理来源文件是两件事。第一次先跳过 AI。'],

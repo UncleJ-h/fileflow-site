@@ -4,13 +4,19 @@ Bilingual static product website. The application source code is not open source
 
 ## Edit and Preview
 
-- Edit copy and product facts in `content/site.mjs`.
+- Edit copy and product facts in `content/site.mjs`; the Johnny.Decimal practice guide lives in `content/johnny-decimal.mjs`.
 - Edit shared page structure in `scripts/build.mjs`, styles in `site.css`, and progressive enhancements in `site.js`.
-- Run `node scripts/build.mjs` to regenerate all 12 pages and `sitemap.xml`. No install step or framework is required.
+- Run `node scripts/build.mjs` to regenerate all 14 pages and `sitemap.xml`. No install step or framework is required.
 - Open `index.html` or `zh/index.html` directly in a browser. Relative links also work on GitHub Pages subpaths.
 - Commit generated HTML with source changes when publication is approved.
 
 English pages retain their original URLs. Chinese counterparts live under `zh/`. Each page links to its translated counterpart, with canonical and language-alternate metadata. Both languages include the product, principles, support, privacy, terms, and first-run guide. Page content and links work without JavaScript; JavaScript adds keyboard-accessible screenshot tabs and enlargement.
+
+## Johnny.Decimal Guide
+
+`johnny-decimal.html` and `zh/johnny-decimal.html` explain the method through a FileFlow sample library and a manual organizing workflow. Links enter from the homepage Browse panel, step 2 of the first-run guide, and the footer. The top navigation and English-default site structure are unchanged.
+
+The text is written for FileFlow, not copied from official documentation. It links to the [official introduction](https://johnnydecimal.com/documentation/introduction), [documentation](https://johnnydecimal.com/documentation), and [licence](https://johnnydecimal.com/support/about-legal/licence), checked September 12, 2026. The page distinguishes FileFlow's built-in starting structure, its screenshot sample library, and official Johnny.Decimal products. It makes no affiliation, endorsement, or external-index synchronization claim. Product checks used `JDDefaultData.swift`, `Config.swift`, the first-run guide, and the unchanged native captures. Publishing does not establish search indexing, rankings, AI citations, or traffic.
 
 ## Release Boundary
 
@@ -31,7 +37,8 @@ Do not restore blanket promises of universal Undo, exclusively local AI processi
 
 ## Local Verification (September 12, 2026)
 
-- Playwright: all 12 pages at 1440px and 390px, local image/link targets, unique headings/IDs, and horizontal overflow checks passed.
+- Playwright: all 14 pages at 1440px and 390px, local image/link targets, unique headings/IDs, and horizontal overflow checks passed.
+- Johnny.Decimal pages: 320/390/768/1440/1920px in both languages; text bounds, canonical/hreflang metadata, sitemap entries, all three entry routes, guide/store links, image dialogs, and no-JavaScript content passed.
 - Additional 320/375/768/1920px homepage checks, hero text/image non-overlap at five sizes in both languages, gallery keyboard navigation, image dialog, FAQ, guide anchors, translated counterpart navigation, and no-JavaScript content passed.
 - Selected logo and all five screenshots match their app-repository source bytes. No legacy purple icon is referenced.
 - `node --check` for the builder and client script, deterministic rebuild, and `git diff --check` passed.
