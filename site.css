@@ -52,6 +52,8 @@ a, button, summary { touch-action: manipulation; }
 .hero-media .screenshot-link { height: 100%; max-width: 1120px; }
 .hero-media img { width: auto; height: 100%; object-fit: contain; object-position: top; }
 .screenshot-link { display: block; cursor: zoom-in; }
+/* Match the native window corners at the captures' 17:9 aspect ratio. */
+.screenshot-link img, .guide-figure img, .image-dialog img { border-radius: 2.4% / 4.533%; }
 .section { padding: 100px 32px; }
 .content-width, .workspace-gallery { width: min(1120px, 100%); margin: auto; }
 .reading-width { width: min(720px, 100%); margin: auto; }
