@@ -78,7 +78,6 @@ function home(locale) {
       </div>
       <div class="hero-media">${shot('01-review-workflow.png', c.reviewAlt, true)}</div>
     </section>
-    <div class="release-band"><p><span class="status-dot" aria-hidden="true"></span>${site.release.status === 'in-review' ? c.reviewStatus : c.liveStatus}</p></div>
     <section class="workflow section" id="workflow" aria-labelledby="workflow-title">
       <div class="section-intro"><p class="eyebrow">${c.workflowLabel}</p><h2 id="workflow-title">${c.workflowTitle}</h2><p>${c.workflowIntro}</p></div>
       <div class="workspace-gallery">
@@ -97,7 +96,7 @@ function home(locale) {
       <div class="boundary-grid">${c.limits.map(([title, text], i) => `<div><h3>${title}</h3><p>${text}</p><a class="text-link" href="${i ? 'support' : 'privacy'}.html">${i ? c.supportLink : c.privacyLink}<span aria-hidden="true"> →</span></a></div>`).join('')}</div>
     </div></section>
     <section class="section faq"><div class="reading-width"><h2>${c.faqTitle}</h2>${c.faqs.map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join('')}<div class="guide-invitation"><p>${c.guideIntro}</p><a class="text-link" href="guide.html">${c.guideLink}<span aria-hidden="true"> →</span></a></div></div></section>
-    <section class="download-section section"><div class="reading-width"><img class="download-icon" src="${imagePath('app-icon.png')}" width="80" height="80" alt=""><p class="eyebrow">${c.pricingLabel}</p><h2>${c.pricingTitle}</h2><p>${c.pricingText}</p>${cta}<p class="small">${c.pricingAI}</p>${site.release.status === 'in-review' ? `<p class="release-note">${c.releaseNote}</p>` : ''}</div></section>
+    <section class="download-section section"><div class="reading-width"><img class="download-icon" src="${imagePath('app-icon.png')}" width="80" height="80" alt=""><p class="eyebrow">${c.pricingLabel}</p><h2>${c.pricingTitle}</h2><p>${c.pricingText}</p>${cta}<p class="small">${c.pricingAI}</p></div></section>
   `;
 }
 
@@ -112,7 +111,7 @@ function document(locale, page) {
     return `<figure class="guide-figure"><a href="${prefix}images/v1.1/${file}" data-zoom aria-label="${c.expand}: ${esc(alt)}"><img src="${prefix}images/v1.1/${file}" width="2720" height="1440" loading="lazy" alt="${esc(alt)}"></a><figcaption>${c.screenshotNote}</figcaption></figure>`;
   };
   return `<article class="document-body reading-width"><header class="document-header"><p class="eyebrow">FILEFLOW</p><h1>${d.title}</h1><p class="document-lead">${d.description}</p>${d.updated ? `<p class="updated">${d.updated}</p>` : ''}</header>
-    ${guide ? `<p class="guide-version">${site.release.status === 'in-review' ? c.releaseNote : c.liveStatus}</p><nav class="guide-toc" aria-label="${locale === 'zh' ? '本页目录' : 'On this page'}">${d.sections.map(([title], i) => `<a href="#step-${i + 1}">${title}</a>`).join('')}</nav>` : ''}
+    ${guide ? `<nav class="guide-toc" aria-label="${locale === 'zh' ? '本页目录' : 'On this page'}">${d.sections.map(([title], i) => `<a href="#step-${i + 1}">${title}</a>`).join('')}</nav>` : ''}
     ${page === 'support' ? `<div class="support-guide"><p>${c.guideIntro}</p><a class="text-link" href="guide.html">${c.guideLink}<span aria-hidden="true"> →</span></a></div>` : ''}
     ${d.sections.map(([title, text], i) => `<section id="step-${i + 1}"><h2>${title}</h2><p>${esc(text).replaceAll(site.email, `<a href="mailto:${site.email}">${site.email}</a>`)}</p>${figure(i)}</section>`).join('')}
     <a class="text-link" href="index.html">${locale === 'zh' ? '返回 FileFlow' : 'Back to FileFlow'}<span aria-hidden="true"> →</span></a></article>`;

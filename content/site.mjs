@@ -3,7 +3,6 @@ export const site = {
   origin: 'https://fileflow.theunclej.com',
   store: 'https://apps.apple.com/app/fileflow-file-organizer/id6756985211?mt=12',
   email: 'fileflow@theunclej.com',
-  release: { version: '1.1', status: 'in-review' },
 };
 
 export const copy = {
@@ -17,9 +16,6 @@ export const copy = {
     lead: 'Organize files.\nKeep what works.',
     intro: 'Review your files. Choose where they belong.\nOrganize when you are ready.',
     download: 'View on the Mac App Store', requirement: 'macOS 14 or later · No FileFlow account required',
-    reviewStatus: 'Previewing 1.1 · Submitted for App Review',
-    releaseNote: 'The screenshots show version 1.1, currently submitted for review. The App Store offers the latest approved version.',
-    liveStatus: 'FileFlow 1.1',
     screenshotNote: 'FileFlow 1.1 · Real app captures with sample files',
     workflowLabel: 'THE WORKFLOW', workflowTitle: 'See the change before you make it.',
     workflowIntro: 'From a loose file to a considered destination. Each workspace keeps the next decision in view.',
@@ -114,9 +110,6 @@ export const copy = {
     lead: '整理文件。\n保留你熟悉的秩序。',
     intro: '审核文件，选择归属位置。\n准备好后，再执行整理。',
     download: '前往 Mac App Store', requirement: 'macOS 14 或更新版本 · 无需 FileFlow 账号',
-    reviewStatus: '1.1 界面预览 · 已提交 App 审核',
-    releaseNote: '本页展示 1.1 版本界面，该版本已提交审核。App Store 当前提供最新已获批版本。',
-    liveStatus: 'FileFlow 1.1',
     screenshotNote: 'FileFlow 1.1 · 使用示例文件的真实应用截图',
     workflowLabel: '整理流程', workflowTitle: '先看清变更，再执行整理。',
     workflowIntro: '从待整理的文件，到有意义的归属位置。每个工作区，都让下一步决定更清楚。',

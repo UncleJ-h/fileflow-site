@@ -14,7 +14,7 @@ English pages retain their original URLs. Chinese counterparts live under `zh/`.
 
 ## Release Boundary
 
-The 1.1 (4) app was submitted for App Review on September 12, 2026, as shown in the owner's App Store Connect submission receipt. Approval and live availability are not yet verified. `site.release.status` is therefore `in-review`: the website labels 1.1 screenshots as a preview and distinguishes them from the latest approved App Store version. Change this only after verifying actual availability, then rebuild.
+The 1.1 (4) app was submitted for App Review on September 12, 2026, as shown in the owner's App Store Connect submission receipt. Approval and live availability are separate facts. At the owner's request, public pages do not display temporary App Review or release-preview notices. Removing those notices is not evidence of App Store approval; the existing download link continues to point to the same App Store listing.
 
 The owner authorized committing and pushing this website revision on September 12, 2026. GitHub Pages is configured to publish from the root of `main`; check the Pages deployment result for publication status. Website publication does not imply App Store approval. Existing copyright holder/year and the main site's support address are preserved. Prices are not hardcoded. Privacy and terms copy is aligned with the product's data flows and recovery limits; this is not a legal certification.
 
