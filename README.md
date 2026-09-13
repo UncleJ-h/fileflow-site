@@ -16,6 +16,8 @@ English pages retain their original URLs. Chinese counterparts live under `zh/`.
 
 `johnny-decimal.html` and `zh/johnny-decimal.html` explain the method through a FileFlow sample library and a manual organizing workflow. Links enter from the homepage Browse panel, step 2 of the first-run guide, and the footer. The top navigation and English-default site structure are unchanged.
 
+The guide also introduces the [official JD CLI](https://johnnydecimal.com/jdhq/jd-cli) and links to its [folder-creation update](https://johnnydecimal.com/blog/0245-jd-cli-now-creates-folders), checked September 13, 2026. It presents terminal and visual workflows as choices, notes that the CLI does not require an AI assistant, and retains the conditions for creating missing ID folders. No CLI installation or FileFlow integration is implied.
+
 The text is written for FileFlow, not copied from official documentation. It links to the [official introduction](https://johnnydecimal.com/documentation/introduction), [documentation](https://johnnydecimal.com/documentation), and [licence](https://johnnydecimal.com/support/about-legal/licence), checked September 12, 2026. The page distinguishes FileFlow's built-in starting structure, its screenshot sample library, and official Johnny.Decimal products. It makes no affiliation, endorsement, or external-index synchronization claim. Product checks used `JDDefaultData.swift`, `Config.swift`, the first-run guide, and the unchanged native captures. Publishing does not establish search indexing, rankings, AI citations, or traffic.
 
 ## Release Boundary

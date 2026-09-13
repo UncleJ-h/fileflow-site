@@ -128,8 +128,9 @@ function method(locale) {
     '',
     `<ul class="method-resources"><li><a href="https://johnnydecimal.com/documentation">${esc(d.resources[0])}</a></li><li><a href="https://johnnydecimal.com/support/about-legal/licence">${esc(d.resources[1])}</a></li></ul><div class="method-actions"><a class="button" href="${site.store}">${c.download}<span aria-hidden="true">↗</span></a><a class="text-link" href="guide.html">${c.guideLink}<span aria-hidden="true"> →</span></a></div>`,
   ];
+  const officialTools = `<section id="official-tools"><h2>${esc(d.tools.title)}</h2><p>${esc(d.tools.terminal)}</p><ul class="method-resources"><li><a href="https://johnnydecimal.com/jdhq/jd-cli">${esc(d.tools.guideLink)}</a></li><li><a href="https://johnnydecimal.com/blog/0245-jd-cli-now-creates-folders">${esc(d.tools.updateLink)}</a></li></ul><p>${esc(d.tools.visual)}</p></section>`;
   return `<article class="document-body reading-width method-body"><header class="document-header"><p class="eyebrow">${d.label}</p><h1>${lines(d.heading || d.title)}</h1><p class="document-lead">${d.lead}</p></header>
-    ${d.sections.map(([title, text], i) => `<section id="method-${i + 1}"><h2>${esc(title)}</h2><p>${esc(text)}</p>${extra[i]}</section>`).join('')}
+    ${d.sections.map(([title, text], i) => `<section id="method-${i + 1}"><h2>${esc(title)}</h2><p>${esc(text)}</p>${extra[i]}</section>${i === 3 ? officialTools : ''}`).join('')}
     <p class="method-attribution">${esc(d.attribution)}</p>
     <a class="text-link" href="index.html">${locale === 'zh' ? '返回 FileFlow' : 'Back to FileFlow'}<span aria-hidden="true"> →</span></a></article>`;
 }
